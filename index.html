@@ -1,20 +1,92 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
     <meta charset="UTF-8">
-    <title>远❤婷的1314</title>
-    <link rel="shortcut icon" href="heart/heart.icon">    
-    <embed src="duoxingyun.mp3" hidden="true" autostart="true" loop="true"/>  
+    <meta name="author" content="晴晴">
+    <title>晴儿的主页</title>
+    <link rel="shortcut icon" href="main-img/heart.icon"> 
+    <embed src="main-music/foxigirl.mp3" hidden="true" autostart="true" loop="true"/> 
     <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width: 100%;
+            height:100%;
+        }
+        body {
+            /* background-image: url("main-img/bc.png"); */
+            /* background-color: palevioletred; */
+            width: 100%;
+            /* height:100%; */
+            background: linear-gradient(45deg,#6fc7b5 0%,#13bdce 20%,#0094d9 40%, #5a3694 60%, #ee4d74 80%, #f58c58 100%);/* 设置线性渐变(角度，颜色值) */
+            background-size: 400%;
+            background-position: 0% 100%;/* 背景颜色的帧数 */
+            animation:gradient 7.5s ease-in-out infinite;
+        }
+        @keyframes gradient{
+        0% {
+            background-position: 0% 100%;
+        }
+        50% {
+            background-position: 100% 0%;
+        }
+        100% {
+            background-position: 0% 100%;        
+        }
+    }
+        img {
+            position: absolute;
+            padding-top: 150px;
+            left: 50%;
+            margin-left: -181px;
+        }
+        div {
+            padding-top: 450px;
+            margin-left: 320px;
+        }
+        h1 {
+            padding-top: 0;
+            margin-left: 30px;
+            color: white;
+        }
+        a {
+            text-decoration: none;
+            /* 去掉超链接的下划线 */
+        }
+        .work a {
+            display: inline-block;
+            margin: 10px;
+            color: #f2f2f2;
+            padding: 10px;
+            margin: 0px 20px 0px 20px;
+            transition: 0.5s;
+        }
+        .work a:hover {
+            transform: scale(2);
+        }
+    </style>
+    <style media="screen and (min-width:512px) and (max-width:1024px)">
+        body {
+            /* background-image: url("main-img/bc.png"); */
+            background-color: palevioletred;
+        }
     </style>
 </head>
+
 <body>
-        <img src="we.jpg" alt="" usemap="#wemap" title="请戳我们的脸。。。" width="100%" height="100%">
-        <map name="wemap">
-                <area shape="rect" coords="216,472,493,900" href="heart/index.html" alt="">     
-                <area shape="rect" coords="577,346,891,850" href="heart/index.html" alt="">           
-        </map>  
-    
-   
+    <img src="main-img/pig.png">
+    <h1>Welcome to QingQing's world!</h1>
+    <div class="work">
+        <a href="xiaomi/xiaomi.html"> 小米闪购</a>
+        <a href="drop-down menu/index.html"> 二级下拉菜单</a>
+        <a href="Popup/index.html">弹窗</a>
+        <a href="Turnaround draw/index.html">转盘抽奖</a>
+        <a href="city/index.html">三级联动</a>
+    </div>
+
 </body>
+
 </html>

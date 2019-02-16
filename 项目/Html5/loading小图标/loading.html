@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>loading</title>
+    <style>
+        body {
+            margin: 0;
+            background: #333;
+        }
+
+        .wrapper {
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        .item {
+            display: inline-block;
+        }
+
+        svg {
+            width: 40px;
+            height: 40px;
+            margin: 60px;
+        }
+        .loader{
+                margin: 0 0 2em;
+                height: 100px;
+                width: 20%;
+                text-align: center;
+                padding: 1em;
+                margin: 0 auto 1em;
+                display: inline-block;
+                vertical-align: top;
+                }
+        /* .circle1 {
+             动画的名称也叫关键帧名称 运动时间 速率:匀速  延迟时间 运动几次(infinite无限次) 
+            animation: move 2s linear infinite;
+            初始状态是暂停 
+             animation-play-state: paused;
+        }
+
+        @keyframes move {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="item item1" title="1">
+            <svg width="500" height="500" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="0" width="4" height="20" fill="#ff6700">
+                    <animate attributeName="opacity" from="0" to="1" begin='0s' dur='0.6s' repeatCount="indefinite" />
+                </rect>
+                <rect x="7" y="0" width="4" height="20" fill="#ff6700">
+                    <animate attributeName="opacity" from="1" to="0" begin='0.2s' dur='0.6s' repeatCount="indefinite" />
+                </rect>
+                <rect x="14" y="0" width="4" height="20" fill="#ff6700">
+                    <animate attributeName="opacity" from="0" to="1" begin='0.4s' dur='0.6s' repeatCount="indefinite" />
+                </rect>
+            </svg>
+        </div>
+        <div class="item item2" title="2">
+            <svg width="500" height="500" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="0" width="4" height="20" fill="#ff6700">
+                    <animate attributeName="height" values="20;10;20" begin='0s' dur='0.6s' repeatCount="indefinite" />
+                </rect>
+                <rect x="7" y="0" width="4" height="20" fill="#ff6700">
+                    <animate attributeName="height" values="20;10;20" begin='0.2s' dur='0.6s' repeatCount="indefinite" />
+                </rect>
+                <rect x="14" y="0" width="4" height="20" fill="#ff6700">
+                    <animate attributeName="height" values="20;10;20" begin='0.4s' dur='0.6s' repeatCount="indefinite" />
+                </rect>
+            </svg>
+        </div>
+        <div class="item item3" title="3">
+            <svg width="500" height="500" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="0" width="4" height="10" fill="#ff6700">
+                    <animate attributeName="y" values="0;10;0" begin='0s' dur='0.6s' repeatCount="indefinite" />
+                </rect>
+                <rect x="7" y="0" width="4" height="10" fill="#ff6700">
+                    <animate attributeName="y" values="0;10;0" begin='0.2s' dur='0.6s' repeatCount="indefinite" />
+                </rect>
+                <rect x="14" y="0" width="4" height="10" fill="#ff6700">
+                    <animate attributeName="y" values="0;10;0" begin='0.4s' dur='0.6s' repeatCount="indefinite" />
+                </rect>
+            </svg>
+        </div>
+        <div class="item item4" title="4">
+            <svg width="500" height="500" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="7" width="4" height="20" fill="#ff6700">
+                    <animate attributeName="height" values="6;20;6" begin='0s' dur='0.6s' repeatCount="indefinite" />
+                    <animate attributeName="y" values="7;0;7" begin='0s' dur='0.6s' repeatCount="indefinite" />
+                </rect>
+                <rect x="7" y="7" width="4" height="20" fill="#ff6700">
+                    <animate attributeName="height" values="6;20;6" begin='0.2s' dur='0.6s' repeatCount="indefinite" />
+                    <animate attributeName="y" values="7;0;7" begin='0.2s' dur='0.6s' repeatCount="indefinite" />
+                </rect>
+                <rect x="14" y="7" width="4" height="20" fill="#ff6700">
+                    <animate attributeName="height" values="6;20;6" begin='0.4s' dur='0.6s' repeatCount="indefinite" />
+                    <animate attributeName="y" values="7;0;7" begin='0.4s' dur='0.6s' repeatCount="indefinite" />
+                </rect>
+            </svg>
+        </div>
+        <div class="item item5" title="5">
+            <svg width="500" height="500" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="7" width="4" height="20" fill="#ff6700">
+                    <animate attributeName="height" values="6;20;6" begin='0s' dur='0.6s' repeatCount="indefinite" />
+                    <animate attributeName="y" values="7;0;7" begin='0s' dur='0.6s' repeatCount="indefinite" />
+                    <animate attributeName="opacity" from="0" to="1" begin='0s' dur='0.6s' repeatCount="indefinite" />
+                </rect>
+                <rect x="7" y="7" width="4" height="20" fill="#ff6700">
+                    <animate attributeName="height" values="6;20;6" begin='0.2s' dur='0.6s' repeatCount="indefinite" />
+                    <animate attributeName="y" values="7;0;7" begin='0.2s' dur='0.6s' repeatCount="indefinite" />
+                    <animate attributeName="opacity" from="1" to="0" begin='0.2s' dur='0.6s' repeatCount="indefinite" />
+                </rect>
+                <rect x="14" y="7" width="4" height="20" fill="#ff6700">
+                    <animate attributeName="height" values="6;20;6" begin='0.4s' dur='0.6s' repeatCount="indefinite" />
+                    <animate attributeName="y" values="7;0;7" begin='0.4s' dur='0.6s' repeatCount="indefinite" />
+                    <animate attributeName="opacity" from="0" to="1" begin='0.4s' dur='0.6s' repeatCount="indefinite" />
+                </rect>
+            </svg>
+        </div>
+        <div class="item item6" title="6">
+            <svg id="loader-1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50"
+                style="enable-background:new 0 0 50 50;">
+                <path fill="#ff6700" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z">
+                    <animateTransform attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s"
+                        repeatCount="indefinite" />
+                </path>
+            </svg>
+        </div>
+        <!-- <div class="item item6" title="6">
+            <svg width="500" height="500" xmlns="http://www.w3.org/2000/svg">
+                <circle class="circle1" cx="30" cy="30" r="3" fill="#ff6700"></circle>
+                <animateTransform attributeName="transform" type="rotate" values="0;360;360" begin='0s' dur='2s'
+                    repeatCount="indefinite" />
+                <circle class="circle2" cx="5" cy="5" r="4" fill="#ff6700"></circle>
+                <circle class="circle3" cx="5" cy="5" r="5" fill="#ff6700"></circle>
+            </svg>
+        </div> -->
+    </div>
+</body>
+
+</html>

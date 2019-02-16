@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>瀑布流</title>
+    <style>
+        body,ul,li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        ul {
+            margin: 30px 30px;
+            column-width: 300px;/* 每列的宽度 */
+            /* border: 1px solid #000; */
+        }
+        li{
+            /* float: left; */
+            display: inline-block;
+            width: 280px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 6px;
+            box-sizing: border-box;/* ie6盒模型 */
+            border-radius: 10px;/* 圆角 */
+            /* box-shadow:3px 3px 2px 3px #ccc; */
+            transition: 0.1s;
+            cursor: pointer;/*将鼠标变成小手*/
+        }
+        li:hover{
+            transform: scale(1.1);
+            z-index:999;
+        }
+        img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><img src="./img1.jpg" alt=""></li>
+        <li><img src="./img2.jpg" alt=""></li>
+        <li><img src="./img3.jpg" alt=""></li>
+        <li><img src="./img4.jpg" alt=""></li>
+        <li><img src="./img5.jpg" alt=""></li>
+        <li><img src="./img6.jpg" alt=""></li>
+        <li><img src="./img7.jpg" alt=""></li>
+        <li><img src="./img8.jpg" alt=""></li>
+        <li><img src="./img9.jpg" alt=""></li>
+        <li><img src="./img10.jpg" alt=""></li>
+        <li><img src="./img11.jpg" alt=""></li>
+        <li><img src="./img1.jpg" alt=""></li>
+        <li><img src="./img2.jpg" alt=""></li>
+        <li><img src="./img3.jpg" alt=""></li>
+        <li><img src="./img4.jpg" alt=""></li>
+        <li><img src="./img5.jpg" alt=""></li>
+        <li><img src="./img6.jpg" alt=""></li>
+        <li><img src="./img7.jpg" alt=""></li>
+        <li><img src="./img8.jpg" alt=""></li>
+        <li><img src="./img9.jpg" alt=""></li>
+        <li><img src="./img10.jpg" alt=""></li>
+        <li><img src="./img11.jpg" alt=""></li>
+    </ul>
+</body>
+</html>

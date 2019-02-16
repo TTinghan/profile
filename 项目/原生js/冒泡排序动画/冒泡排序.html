@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>冒泡排序动画</title>
+    <style>
+        div {
+            position: absolute;
+            top: 0%;
+            width: 50px;
+
+            border: 1px solid black;
+            text-align: center;
+            /* transition: left 1s; */
+        }
+
+        .active1 {
+            background-color: rgb(199, 61, 61);
+        }
+
+        .active2 {
+            background-color: rgb(44, 204, 84);
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var arr = [];
+        function craetArr() {
+            var num = parseInt(Math.random() * 5) + 5;
+            for (var i = 0; i < num; i++) {
+                arr.push(parseInt(Math.random() * 50) + 15);
+            }
+        }
+        craetArr();
+        var comparTime = arr.length - 2;
+        var divarr = [];
+        for (var i = 0; i < arr.length; i++) {
+            divarr[i] = document.createElement('div');
+            document.body.appendChild(divarr[i]);
+            divarr[i].style.height = arr[i] * 4 + 'px';
+            divarr[i].style.left = i * 60 + 'px';
+            divarr[i].innerHTML = arr[i];
+        }
+
+        window.onload = function init() {
+            compare();
+        }
+
+        var s = 0;
+        function compare() {
+            var divLeft = divarr[s];
+            var divRight = divarr[s + 1];
+            var endRight = divLeft.offsetLeft;
+            var endLeft = divRight.offsetLeft,
+                tempLeft = endRight,
+                tempRight = endLeft;
+            divLeft.className = 'active1';
+            divRight.className = 'active2';
+
+            if (divarr[s].offsetHeight > divarr[s + 1].offsetHeight) {
+                var move = setInterval(function () {
+                    if (divLeft.offsetLeft < endLeft) {
+                        divLeft.style.left = tempLeft++ + 'px';
+                    } if (divRight.offsetLeft > endRight) {
+                        divRight.style.left = tempRight-- + 'px';
+                    } if (divLeft.offsetLeft >= endLeft && divRight.offsetLeft <= endRight) {
+                        clearInterval(move);
+                        divarr[s + 1] = divLeft;
+                        divarr[s] = divRight;
+                        divLeft.className = '';
+                        divRight.className = '';
+                        if (s < comparTime) {
+                            s++;
+                            setTimeout(() => {
+                                divLeft.className = '';
+                                divRight.className = '';
+                                compare();
+                            }, 1000);
+                        } else {
+                            if (comparTime > 0) {
+                                nextCompare(divLeft, divRight);
+                            }
+                        }
+                    }
+                }, 20);
+            } else {
+                if (s < comparTime) {
+                    s++;
+                    setTimeout(() => {
+                        setTimeout(() => {
+                            divLeft.className = '';
+                            divRight.className = '';
+                            compare();
+                        }, 1000);
+                    }, 1000);
+                } else {
+                    if (comparTime > 0) {
+                        nextCompare(divLeft, divRight);
+                    }
+                }
+            }
+        }
+        function nextCompare(divLeft, divRight) {
+            s = 0;
+            comparTime--;
+            setTimeout(() => {
+                divLeft.className = '';
+                divRight.className = '';
+                compare();
+            }, 1000);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>player</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/iconfont.css">
+    <link rel="stylesheet" href="./css/iconfont1.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <audio src="http://fs.w.kugou.com/201901261950/e04c51b986c181c24eaa6f38d596ae87/G095/M09/02/13/nw0DAFkYax2AFr6pADFA-SgCRo0220.mp3"
+            id="audio"></audio>
+        <main class="main">
+            <img class="img" src="http://p0.so.qhmsg.com/bdr/_240_/t01d569bb5ad9d0c195.jpg" alt="">
+        </main>
+        <h1 class="musicName">「 刚好遇见你.mp3 」</h1>
+        <p class="name ">冯提莫 ♪</p>
+        <!-- 播放器工具 -->
+        <div class="tool">
+            <!-- 播放器的控件 -->
+            <div class="btn">
+                <span class="iconfont previous" title="上一曲">&#xe698;</span>
+                <span class="iconfont start" title="播放">&#xe640;</span>
+                <span class="iconfont next" title="下一曲">&#xe6a1;</span>
+            </div>
+            <!-- 进度条 -->
+            <div class="progress">
+                <div class="current-time"></div>
+                <div class="pro-box">
+                    <div class="pro-bg"></div>
+                    <div class="pro-active">
+                        <div class="radio-box">
+                            <span class="radio"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="all-time"></div>
+            </div>
+            <div class="volume-box">
+                <div class="volume"><span class="iconfont ">&#xe60c;</span>
+                    <div class="nav">
+                        <div class="bgcolor-box">
+                            <div class="volume-bg"></div>
+                            <div class="volume-active">
+                                <div class="radio-box1">
+                                    <span class="radio1"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

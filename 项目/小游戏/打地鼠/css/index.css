@@ -1,0 +1,180 @@
+  /* 背景 */
+  #stage {
+    /* border: 1px solid #000; */
+    position: relative;
+    height: 550px;
+    width: 750px;
+    margin-left: 300px;
+    background: url(../img/bg.png);
+    user-select: none;
+    cursor: none;
+    z-index: 1;
+}
+
+/* 锤子 */
+#hammer {
+    /* border: 1px solid #000; */
+    position: absolute;
+    display: none;
+    margin-top: -35px;
+    margin-left: -35px;
+    top: 0;
+    left: 0;
+    user-select: none;
+    cursor: none;
+    z-index: 999;
+}
+
+/* 小老鼠 */
+div[id^="mouse"] {
+    width: 102px;
+    height: 103px;
+    position: absolute;
+    overflow: hidden;
+}
+
+/* 小老鼠 1*/
+#mouse1 {
+    top: 160px;
+    left: 140px;
+}
+
+/* 小老鼠 2*/
+#mouse2 {
+    top: 160px;
+    left: 330px;
+}
+
+/* 小老鼠 3*/
+#mouse3 {
+    top: 160px;
+    left: 527px;
+}
+
+/* 小老鼠 4*/
+#mouse4 {
+    top: 245px;
+    left: 116px;
+}
+
+/* 小老鼠 5*/
+#mouse5 {
+    top: 245px;
+    left: 335px;
+}
+
+/* 小老鼠6 */
+#mouse6 {
+    top: 245px;
+    left: 533px;
+}
+
+/* 小老鼠 7*/
+#mouse7 {
+    top: 340px;
+    left: 110px;
+}
+
+/* 小老鼠 8*/
+#mouse8 {
+    top: 345px;
+    left: 334px;
+}
+
+/* 小老鼠 9*/
+#mouse9 {
+    top: 345px;
+    left: 550px;
+}
+
+/* 9个小老鼠定位 */
+div[id^="mouse"] img {
+    position: absolute;
+    top: 102px;
+    left: 0px;
+}
+
+/* 分数 */
+#score {
+    position: absolute;
+    top: 195px;
+    left: 235px;
+}
+
+/* 倒计时 */
+#countdown {
+    position: absolute;
+    top: 195px;
+    left: 500px;
+}
+
+/* 开始和结束部分*/
+.container {
+    position: absolute;
+    top: 0;
+    left: 330px;
+    width: 750px;
+    height: 550px;
+    z-index: 999;
+}
+
+.container > div > span {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    font-family: monospace;
+    font-size: 30px;
+}
+/* 开始按钮 */
+#start {
+    position: absolute;
+    top: 580px;
+    left: 100px;
+    width: 200px;
+    height: 100px;
+    cursor: pointer;
+    user-select: none;
+    z-index: 100;
+}
+
+#start img {
+    width: 200px;
+    height: 80px;
+    border: 1px solid greenyellow;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* 结束按钮 */
+#end {
+    position: absolute;
+    top: 580px;
+    left: 400px;
+    cursor: pointer;
+    z-index: 100;
+    user-select: none;
+}
+
+#end img {
+    width: 200px;
+    height: 80px;
+    border: 1px solid greenyellow;
+    border-radius: 10px;
+    overflow: hidden;
+}
+/* 游戏结束 */
+#prompt {
+    position: absolute;
+    top: 300px;
+    left: 183px;
+    width: 366px;
+    height: 114px;
+    border-radius: 30px;
+    background: url(../img/anniu.png);
+    overflow: hidden;
+    user-select: none;
+} 
+#prompt .lr {
+    top: 30px;
+    left: 110px;
+}

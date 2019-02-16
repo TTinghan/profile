@@ -1,0 +1,226 @@
+/* 初始化 */
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+/* 设置背景 */
+html{
+    /* body充满第一屏 */
+    width: 100%;
+    height: 100%;
+}
+body{
+    background-image: url('http://img.pconline.com.cn/images/upload/upc/tx/wallpaper/1212/13/c1/16576839_1355391347685.jpg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size:cover;/* 等比充满放大 */
+}
+/* 设置唱片显示 */
+.wrapper{
+    /* background: #ccc; */
+    width: 600px;
+    margin: 50px auto 0;
+    /* background: #ccc; */
+}
+.main{
+    width: 100%;
+    /* 在img的父级设置居中 使img水平居中 */
+    text-align: center;
+}
+.main .img{
+    width: 200px;
+    height: 200px;
+    border: 50px solid #444;
+    border-radius: 50%;
+    margin: 0 auto;
+     /* 动画的名称也叫关键帧名称 运动时间 速率:匀速  延迟时间 运动几次(infinite无限次) */
+     animation: move 6s linear infinite;
+     /* 初始状态是暂停 */
+     animation-play-state: paused;
+}
+@keyframes move {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/* 歌名&歌手介绍 */
+.musicName,.name{
+    margin: 20px;
+    font-size:20px;
+    color: #fff;
+    text-align: center;
+}
+.musicName{
+    font-size: 25px;
+}
+/* 设置播放工具 */
+.tool{
+    position: relative;
+    width: 100%;
+    height: 60px;
+    background: rgba(0,0,0,0.5);
+    /* margin会算在盒子内，不会超出盒子 */
+    margin-top: 100px;
+    border-radius: 20px;
+}
+.btn{
+    position: absolute;
+    /* width: 30px; */
+    height: 30px;
+    left: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+/* 音量设置 */
+.volume-box{
+    position: absolute;
+    margin-left: 530px;
+    height: 120px;
+    /* background: rgb(126, 125, 124); */
+}
+.nav{
+    width: 30px;
+    top: 165px;
+    /* background: #444; */
+}
+.bgcolor-box{
+    position: relative;
+    width: 30px;
+    height: 115px;
+    top: -165px;
+    padding: 10px 0;
+    border-radius: 13px;
+    background: #444;
+    display: none;
+}
+.volume-box .show .bgcolor-box{
+    display: block;
+}
+.volume-bg{
+    position: absolute;
+    width: 2px;
+    height: 85%;
+    margin-left: 15px;
+    /* margin-top: 27px; */
+    /* background: red; */
+    background: rgba(0,0,0,0.3);
+}
+.volume-active{
+    /* 使进度条脱离文档流，覆盖在进度条上 */
+    position: absolute;
+    bottom:11px;
+    left: 15px;
+    width: 2px;
+    height: 85%;
+    background: #fff;
+}
+.volume{
+    /* position: absolute; */
+    width: 30px;
+    height: 30px;
+    right: 30px;    
+}
+.volume>.iconfont:hover{
+    color: rgb(0, 217, 255);
+}
+.tool span{
+    color: #fff;
+    font-size: 30px;
+    user-select: none;
+    cursor: pointer;
+}
+/* 设置工具的垂直居中 */
+.tool>div{
+    top: 50%;
+    margin-top: -15px;
+}
+/* 设置进度条 */
+.progress{
+    position: absolute;
+    left: 50%;
+    margin-left: -155px;
+    width: 380px;
+    height: 30px;
+    /* background: #444; */
+}
+.current-time,
+.all-time{
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    color: #fff;
+    line-height: 30px;
+    font-weight: 200;
+}
+/* 设置时间显示的位置 */
+.current-time{
+    float: left;
+    user-select: none;
+}
+.all-time{
+    float: right;
+    user-select: none;
+}
+.pro-box{
+    position: absolute;
+    top: 50%;
+    margin-top: -1px;
+    display: inline-block;
+    width: 220px;
+    height: 2px;
+    /* background: #f40; */
+}
+.pro-bg{
+    width: 100%;
+    height: 2px;
+    background: rgba(0,0,0,0.3);
+}
+/* 进度条 */
+.pro-active{
+    /* 使进度条脱离文档流，覆盖在进度条上 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 2px;
+    background: #fff;
+}
+/* 设置小圆点盒子 */
+.radio-box,.radio-box1{
+    position: absolute;
+    right: -9px;
+    top:-9px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    /* background: rgba(0,0,0,0.5); */
+}
+.radio-box1{
+    top: -6px;
+}
+/* 设置小圆点 */
+.radio,.radio1{
+    position: absolute;
+    left: 50%;
+    margin-left: -4px;
+    top:50%;
+    margin-top: -4px;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+    /* opacity:0.5; */
+}
+.radio-box:hover{
+    transform: scaleY(1.2) scaleX(1.2);
+}
+.radio-box1:hover{
+    transform: scaleY(1.2) scaleX(1.2);
+}

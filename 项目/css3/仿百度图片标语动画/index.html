@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动画练习</title>
+    <style>
+        body {
+            background: pink;
+        }
+
+        ul {
+            display: flex;
+            width: 80%;
+            margin: 0 auto;
+            min-width: 600px;
+            font-size: 0;
+        }
+
+        li {
+            position: relative;
+            display: inline-block;
+            list-style: none;
+            width: 200px;
+            margin: 0 10px;
+            border: 2px solid rgb(250, 100, 125);
+            border-radius: 20px;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.5)
+        }
+
+        li img {
+            width: 100%;
+            height: 310px;
+            border-radius: 20px;
+            transform: translateY(100%);
+            transition: transform 0.8s linear;
+        }
+
+        .cover {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 45px;
+            overflow: hidden;
+        }
+
+        li .cover .des {
+            font-size: 15px;
+            background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.9));
+            color: #fff;
+            height: 45px;
+            padding: 5px;
+            /* 图片描述的初始值 */
+            transform: translate(0, 100%);
+            overflow: hidden;
+            /* 添加过渡效果 */
+            /* transition: transform 0.3s; */
+        }
+
+        li .cover .in-top,
+        li .cover .out-top {
+            transform: translate(0, -100%);
+        }
+
+        li .cover .in-right,
+        li .cover .out-right {
+            transform: translate(100%, 0);
+        }
+
+        li .cover .in-bottom,
+        li .cover .out-bottom {
+            transform: translate(0, 100%);
+        }
+
+        li .cover .in-left,
+        li .cover .out-left {
+            transform: translate(-100%, 0);
+        }
+
+        /* 鼠标进入的动画 */
+        li .cover .in-top,
+        li .cover .in-right,
+        li .cover .in-bottom,
+        li .cover .in-left {
+            animation: inDes 0.3s linear forwards;
+        }
+
+        @keyframes inDes {
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+        /* 鼠标移出的动画 */
+        li .cover .out-top {
+            animation: outTop 0.3s linear forwards;
+        }
+
+        @keyframes outTop {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(0, -100%);
+            }
+        }
+
+        li .cover .out-right {
+            animation: outRight 0.3s linear forwards;
+        }
+
+        @keyframes outRight {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(100%, 0);
+            }
+        }
+
+        li .cover .out-bottom {
+            animation: outBotton 0.3s linear forwards;
+        }
+
+        @keyframes outBotton {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(0, 100%);
+            }
+        }
+
+        li .cover .out-left {
+            animation: outLeft 0.3s linear forwards;
+        }
+
+        @keyframes outLeft {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(-100%, 0);
+            }
+        }
+
+
+        .init img {
+            transform: translateY(0);
+        }
+
+        /* 设置图片的延迟 */
+        ul li:nth-child(1) img {
+            transition-delay: 0;
+        }
+
+        ul li:nth-child(2) img {
+            transition-delay: 0.1s;
+        }
+
+        ul li:nth-child(3) img {
+            transition-delay: 0.2s;
+        }
+
+        ul li:nth-child(4) img {
+            transition-delay: 0.3s;
+        }
+
+        ul li:nth-child(5) img {
+            transition-delay: 0.4s;
+        }
+
+        /* 设置鼠标的hover效果 */
+        /* li:hover .des {
+            transform: translateY(0);
+        } */
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <img src="./img/img1.jpg" alt="">
+            <div class="cover">
+                <div class="des">我是小喵咪我是小喵咪我是小喵咪</div>
+            </div>
+        </li>
+        <li>
+            <img src="./img/img2.jpg" alt="">
+            <div class="cover">
+                <div class="des">我是小喵咪我是小喵咪我是小喵咪</div>
+            </div>
+        </li>
+        <li>
+            <img src="./img/img3.jpg" alt="">
+            <div class="cover">
+                <div class="des">我是小喵咪我是小喵咪我是小喵咪</div>
+            </div>
+        </li>
+        <li>
+            <img src="./img/img7.jpg" alt="">
+            <div class="cover">
+                <div class="des">我是小喵咪我是小喵咪我是小喵咪</div>
+            </div>
+        </li>
+        <li>
+            <img src="./img/img8.jpg" alt="">
+            <div class="cover">
+                <div class="des">我是小喵咪我是小喵咪我是小喵咪</div>
+            </div>
+        </li>
+
+    </ul>
+    <script>
+        var oUl = document.getElementsByTagName('ul')[0];
+        window.onload = function () {
+            oUl.className = 'init';
+        }
+        var oLi = document.getElementsByTagName('li');
+        var len = oLi.length;
+        for (var i = 0; i < len; i++) {
+            // 鼠标的移入文字效果
+            oLi[i].onmouseenter = function (e) {
+                var dir = getDirection(e, this);
+
+                var oDes = this.getElementsByClassName('des')[0];
+                oDes.className = 'des';/* 初始化des */
+                switch (dir) {
+                    case 0:
+                        oDes.classList.add('in-top');
+                        break;
+                    case 1:
+                        oDes.classList.add('in-right');
+                        break;
+                    case 2:
+                        oDes.classList.add('in-bottom');
+                        break;
+                    case 3:
+                        oDes.classList.add('in-left');
+                        break;
+                }
+            }
+            // oDes.classList.add();
+            // 鼠标的移出
+            oLi[i].onmouseleave = function (e) {
+                var dir = getDirection(e, this);
+
+                var oDes = this.getElementsByClassName('des')[0];
+                oDes.className = 'des';/* 初始化des */
+                switch (dir) {
+                    case 0:
+                        oDes.classList.add('out-top');
+                        break;
+                    case 1:
+                        oDes.classList.add('out-right');
+                        break;
+                    case 2:
+                        oDes.classList.add('out-bottom');
+                        break;
+                    case 3:
+                        oDes.classList.add('out-left');
+                        break;
+                }
+            }
+
+
+        }
+        function getDirection(e, ele) {
+            var w = ele.offsetWidth;
+            var h = ele.offsetHeight;
+            // 判断图形的宽高
+            var x = (e.offsetX - w / 2) * (w > h ? h / w : 1);
+            var y = (e.offsetY - h / 2) * (h > w ? w / h : 1);
+            var d = (Math.round((Math.atan2(y, x) * (180 / Math.PI) + 180) / 90) + 3) % 4;
+            return d;
+        }
+
+    </script>
+</body>
+
+</html>

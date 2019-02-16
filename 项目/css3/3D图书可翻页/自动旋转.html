@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript高级程序设计（第3版）</title>
+    <style>
+        body {
+            perspective: 600px;
+            background: linear-gradient(90deg, rgb(250, 249, 249) 0, rgb(32, 22, 168) 100%);
+        }
+
+        .book {
+            position: relative;
+            width: 200px;
+            height: 250px;
+            margin: 100px auto;
+            transform-style: preserve-3d;
+            animation: move 5s linear infinite;
+            transform: rotateX(-30deg) rotateY(60deg);
+        }
+
+        .page {
+            position: absolute;
+            transform-style: preserve-3d;
+        }
+
+        .item {
+            position: absolute;
+            width: 200px;
+            height: 250px;
+            /* border: 1px solid rgb(173, 15, 15); */
+        }
+
+        /* 封面 */
+
+        .item1 {
+            transform: translateZ(1px);
+        }
+
+        /* 背面封面 */
+
+        .item2 {
+            transform: rotateY(180deg) translateZ(1px);
+        }
+
+        /* 左侧封面 */
+
+        .item3,
+        .item4 {
+            width: 2px;
+            height: 250px;
+            left: 99px;
+            background: rgb(173, 15, 15);
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+
+        /* 右侧封面 */
+
+        .item4 {
+            background: rgb(233, 225, 204);
+            transform: rotateY(90deg) translateZ(100px);
+        }
+
+        /* 上面封面 */
+
+        .item5,
+        .item6 {
+            width: 200px;
+            height: 2px;
+            top: 124px;
+            background: rgb(233, 225, 204);
+            transform: rotateX(90deg) translateZ(125px);
+        }
+
+        /* 下面的封面 */
+
+        .item6 {
+            transform: rotateX(-90deg) translateZ(125px);
+        }
+
+        .page1 {
+            /* transform: translateZ(7px); */
+            /* transform-origin: 0 50% -1px;
+            transform: rotateY(-180deg) translateZ(0px); */
+            transition: all 1s;
+        }
+
+        .page2 {
+            transform: translateZ(-2px) rotateY(-0deg);
+            /* transform-origin: 0 50% -1px; */
+            /* transform: rotateY(-180deg) translateZ(-2px); */
+            transition: all 1s;
+        }
+
+        .page3 {
+            transform: translateZ(-4px) rotateY(-0deg);
+            transition: all 1s;
+        }
+
+        .page4 {
+            transform: translateZ(-6px) rotateY(-0deg);
+            transition: all 1s;
+        }
+
+        .page5 {
+            transform: translateZ(-8px) rotateY(-0deg);
+            transition: all 1s;
+        }
+
+        .page6 {
+            transform: translateZ(-10px) rotateY(-0deg);
+            transition: all 1s;
+        }
+
+        .page7 {
+            transform: translateZ(-12px) rotateY(-0deg);
+            transition: all 1s;
+        }
+
+        .page8 {
+            transform: translateZ(-14px) rotateY(-0deg);
+            transition: all 1s;
+        }
+
+        img {
+            width: 200px;
+            height: 250px;
+        }
+
+        /* @keyframes turndown1{
+            0% {
+                transform-origin: 0 50% 0;
+                transform-rotate
+            }
+            100% {
+                transform-origin: 0 50% -1;
+                transform: rotateX(-30deg) rotateY(0);
+            }
+        } */
+
+        @keyframes move {
+            0% {
+                transform: rotateX(-30deg) rotateY(360deg);
+            }
+
+            100% {
+                transform: rotateX(-30deg) rotateY(0);
+            }
+        }
+
+        /* @keyframes change {
+            0% {
+                background: linear-gradient(0deg, #020031 0, #6d3353 100%);
+            }
+
+            100% {
+                background: linear-gradient(360deg, #020031 0, #6d3353 100%);
+            }
+        } */
+
+        .prompt {
+            text-align: center;
+            color: #fff;
+        }
+
+        .author {
+            text-align: center;
+            color: #fff;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div>
+        <p class="prompt">温馨❤提示：请点击书的封面可翻页,放大后效果更佳。</p>
+    </div>
+    <div class="book">
+        <div class="page page1">
+            <div class="item item1 pageup"><img src="./img/zheng.png" alt="封面"></div>
+            <div class="item item2 pagedown"><img src="./img/1 (2).png" alt="背面"></div>
+            <div class="item item3"></div>
+            <div class="item item4"></div>
+            <div class="item item5"></div>
+            <div class="item item6"></div>
+        </div>
+        <div class="page page2">
+            <div class="item item1 pageup"><img src="./img/1.png" alt="封面"></div>
+            <div class="item item2 pagedown"><img src="./img/2.png" alt="背面"></div>
+            <div class="item item3"></div>
+            <div class="item item4"></div>
+            <div class="item item5"></div>
+            <div class="item item6"></div>
+        </div>
+        <div class="page page3">
+            <div class="item item1 pageup"><img src="./img/3.png" alt="封面"></div>
+            <div class="item item2 pagedown"><img src="./img/4.png" alt="背面"></div>
+            <div class="item item3"></div>
+            <div class="item item4"></div>
+            <div class="item item5"></div>
+            <div class="item item6"></div>
+        </div>
+        <div class="page page4">
+            <div class="item item1 pageup"><img src="./img/5 (1).png" alt="封面"></div>
+            <div class="item item2 pagedown"><img src="./img/5 (2).png" alt="背面"></div>
+            <div class="item item3"></div>
+            <div class="item item4"></div>
+            <div class="item item5"></div>
+            <div class="item item6"></div>
+        </div>
+        <div class="page page5">
+            <div class="item item1 pageup"><img src="./img/5 (3).png" alt="封面"></div>
+            <div class="item item2 pagedown"><img src="./img/5 (4).png" alt="背面"></div>
+            <div class="item item3"></div>
+            <div class="item item4"></div>
+            <div class="item item5"></div>
+            <div class="item item6"></div>
+        </div>
+        <div class="page page6">
+            <div class="item item1 pageup"><img src="./img/5 (5).png" alt="封面"></div>
+            <div class="item item2 pagedown"><img src="./img/5 (6).png" alt="背面"></div>
+            <div class="item item3"></div>
+            <div class="item item4"></div>
+            <div class="item item5"></div>
+            <div class="item item6"></div>
+        </div>
+        <div class="page page7">
+            <div class="item item1 pageup"><img src="./img/5 (4).png" alt="封面"></div>
+            <div class="item item2 pagedown"><img src="./img/5 (5).png" alt="背面"></div>
+            <div class="item item3"></div>
+            <div class="item item4"></div>
+            <div class="item item5"></div>
+            <div class="item item6"></div>
+        </div>
+        <div class="page page8">
+            <div class="item item1 pageup"><img src="./img/5.(7).png" alt="封面"></div>
+            <div class="item item2 pagedown"><img src="./img/fan.png" alt="背面"></div>
+            <div class="item item3"></div>
+            <div class="item item4"></div>
+            <div class="item item5"></div>
+            <div class="item item6"></div>
+        </div>
+    </div>
+    <script src="book.js"></script>
+
+</body>
+
+</html>

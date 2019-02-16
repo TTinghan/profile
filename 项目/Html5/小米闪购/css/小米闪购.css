@@ -1,0 +1,426 @@
+body,.seckill-list{
+    padding: 0;
+    margin: 0;
+    height: 2500px;
+}
+ul{
+    list-style-type: none;
+}
+.container a{
+    text-decoration: none;
+    outline: none;
+}
+.topbar{
+    height: 40px;
+    background-color: #333;
+}
+.container::before,.container::after,
+.clearfix::before,.clearfix::after{
+    content: "";
+    display: table;
+}
+.container::after,.clearfix::after{
+    clear: both;
+}
+.container{
+    margin: 0 auto;
+    width: 1226px;
+}
+.topbar-nav a{
+    float: left;
+    display:block;
+    color: #b0b0b0;
+    font-size: 12px;
+    height: 40px;
+    line-height: 40px;
+}
+.topbar-nav a:hover{
+    color: #fff;
+}
+.topbar-nav span{
+    float: left;
+    font-size: 12px;
+    font-family: sans-serif;   
+    line-height: 40px;
+    margin: 0 0.5em;
+    color: #424242;
+}
+.topbar-cart .iconfont{
+    margin-right: 4px;
+    font-size: 20px;    
+}
+.topbar-cart a{
+    display: block;
+    float: right;
+    color: #b0b0b0;
+    font-size: 12px;
+    height: 40px;
+    line-height: 40px;
+    background: #424242;
+    width: 120px;
+    text-align: center;
+}
+.topbar-cart a:hover{
+   background-color:#fff;
+   color: #ff6700;
+
+}
+.topbar-cart span{
+    margin-left: -4px;
+    font-size: 12px;
+}
+.topbar-info .sep{
+    display: inline-block;
+    padding: 0 10px;
+    margin-right: 15px;
+}
+.topbar-info a{
+    float: right;
+    padding: 0 5px;
+    color: #b0b0b0;
+    font-size: 12px;
+    height: 40px;
+    line-height: 40px;
+    
+
+}
+.topbar-info a:hover{
+    color: #fff;
+}
+
+.topbar-info span{
+    float: right;
+    font-size: 12px;
+    font-family: sans-serif;   
+    line-height: 40px;
+    color: #424242;
+}
+/*head*/
+.header{
+    height: 100px;
+}
+.header-logo {
+    
+    float: left;
+    width: 62px; 
+    margin-top: 22px;
+}
+.header-logo a{
+    display: block;
+    width: 55px;
+    height: 55px;
+    background: url(../img/mi-logo.png) #ff6700 no-repeat 50% 50%;
+    text-align: left;
+    text-indent: -99999px;
+    overflow: hidden;
+}
+.header-nav{
+    float: left;
+    width: 850px;
+    height: 100px;
+    padding:10px 0 0 20px; 
+}
+.header-nav .nav-list a{
+    float: left;
+    color: #333;
+    padding: 16px 10px 38px 10px;    
+}
+.nav-list .nav-ca a{
+padding: 16px 15px 38px 0;
+}
+.header-nav .nav-list .nav-item a:hover{
+    color: #ff6700;
+}
+.header-search{
+    position: relative;
+    float: right;
+    width: 276px;
+    height: 50px;
+    margin-top: 22px;
+}
+.header-search .txt{
+    position: absolute;
+    top: 0;
+    right: 51px;
+    display:block;
+    width: 245px;
+    height: 50px;
+    line-height: 50px;
+    border:solid 1px #e0e0e0;
+    outline: 0;
+}
+.header-search .btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 52px;
+    height: 50px;
+    font-size: 24px;
+    line-height: 24px;
+    color: #616161;
+    background-color: #fff;
+    border:solid 1px #e0e0e0;
+    outline: 0;
+}
+.header-search .btn:hover{
+    background: #ff6700;
+    color: #fff;
+}
+.header-search .search-txt{
+    display: inline-block;
+    color: #616161;
+    font-size: 12px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+/*seckill*/
+.seckill{
+    background-color:#f5f5f5;
+}
+.seckill-navfixed{
+    width: 1226px;
+    position: fixed;
+}
+.seckill-goods .list-nav{
+    display: block;
+}
+.seckill-goods ul{
+    display: none;
+}
+.seckill .seckill-bg{ 
+    height: 170px;   
+   background: url(../img/seckill-head.jpg) no-repeat 50% 0;
+}
+.seckill-nav{
+    margin-top: -68px;
+    background-color: #414141;
+    height: 68px;
+    line-height: 68px;
+}
+.seckill-nav .seckill-list li{
+    float: left;
+    text-align: center;
+    width: 245.2px;
+    cursor: pointer; 
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 14px;  
+} 
+.seckill-nav .seckill-list .list-nav{
+    background-color: #f1393a;
+}
+.seckill-nav .seckill-list  .list-nav span{
+    display: inline-block;
+    vertical-align: middle;
+    line-height:1.3; 
+    text-align: left;
+}
+.seckill-nav .seckill-list em{
+    display: inline-block;
+    font-style: normal;
+    font-size: 18px;
+    margin-right: 15px;
+    line-height: 1;
+}
+.seckill-goods ul{
+    padding-left: 0;
+    margin-right: -15px;
+}
+.seckill-goods li{
+    background: #fff;
+    float: left;
+   margin-right: 13px;
+   margin-bottom: 13px;
+    width: 400px;
+    height: 190px;
+}
+.seckill-goods .goods-bg{
+    float: left;
+    width: 190px;
+    height: 190px;
+}
+.goods-info a{
+    display:block;
+}
+.seckill-goods .goods-info{
+    width: 190px;
+    height: 190px;
+    margin-left: 210px; 
+
+}
+.goods-info span{
+    height: 16px;
+    line-height: 16px;
+    margin-top: 30px;
+    display:block;
+    font-size: 16px;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.goods-info .yuan{
+   margin-top: 15px;
+}
+.goods-info .price{
+    font-size: 12px;
+    color: #b0b0b0;
+}
+.goods-info .price span{
+    font-size: 12px;
+    color: #b0b0b0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 1px;
+}
+.goods-info span em{
+    font-style: normal;
+    color: #f1393a;
+    font-size: 16px;
+
+}
+.goods-info span del{
+     color: #b0b0b0;
+    font-size: 12px; 
+    margin-left: 16px;
+}
+.goods-info .info{
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+    background-color: #f1393a;
+    color: #fff;
+    text-align: center;
+}
+ .notice{
+    color:#b0b0b0;
+    font-size:12px;
+   margin-top: 100px;
+   padding-bottom: 35px;
+}
+.service{
+  margin: 25px 0 25px 0;
+ 
+}
+.service span{
+    float: left;
+    color: #e0e0e0;
+    height: 60px;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+.service .iconfont{
+    font-size: 24px;
+    margin-right: 10px;
+    height: 25px;
+    line-height: 25px;
+}
+.service a{
+    float: left;
+    font-size: 16px;
+    color: #333;
+    height: 25px;
+    line-height: 25px;
+    width: 18.8%;
+    text-align: center;   
+}
+.service a:hover{
+    color: #ff6700;
+}
+/*table*/
+.table{
+    width: 960px;
+    height: 112px;
+    float: left;
+}
+.table th{
+    text-align: left;
+    color: #424242;
+    font-size: 14px;
+    line-height: 1.25;
+    padding-bottom: 25px;  
+}
+.table a{
+    color: #b0b0b0;
+    font-size: 12px;
+}
+.table a:hover{
+    color: #ff6700;
+}
+.contact span{
+    padding: 0 35px;
+    font-size: 24px;
+    color: #ff6700;
+    text-align: center;
+}
+.contact p{
+    padding: 0 25px;
+    font-size: 12px;
+    color: #b0b0b0;
+    text-align: center;
+   
+}
+.contact a{
+    margin: 0 auto;
+    display: inline-block;
+    width: 120px;
+    height: 30px;
+    color: #ff6700;
+    font-size: 14px;
+    line-height: 30px;
+    border: 1px solid #ff6700;
+    text-align: center;
+    margin-left: 55px;
+
+}
+.foot{
+    background-color:#f0f0f0;
+    height: 182px;
+    margin-top: 30px;
+}
+.foot-log{
+    float: left;
+    width: 55px;
+    height: 55px;
+    background: #ff6700 url(../img/mi-logo.png) no-repeat 50% 0;
+    margin-top:30px;
+    margin-right: 15px;
+}
+.foot-nav{
+    margin-top: 30px;
+}
+.foot-nav span{
+    color: #616161;
+   padding: 0 2px;
+}
+.foot-nav a{
+    font-size: 14px;
+    color: #616161;
+}
+.foot-nav a:hover{
+    color: #ff6700;
+}
+.foot-nav .foot-text {
+    font-size: 12px;
+}
+.foot-nav .foot-text i{
+    font-style: normal;
+    color: #616161;
+    margin-left: 70px;
+}
+.partner{
+    margin-top: -100px;
+   float: right;
+}
+.partner a{
+    margin: 15px 5px ;
+    width: 85px;
+}
+.partner span{
+    display: block;
+    padding-top: 15px;
+    padding-left: 100px;
+}

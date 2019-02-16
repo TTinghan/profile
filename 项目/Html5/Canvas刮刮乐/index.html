@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>刮刮乐</title>
+    <link rel="stylesheet" href="./css/demo.css">
+</head>
+
+<body>
+    <h1>刮刮乐</h1>
+    <p class="note">[温馨提示：刮卡至70%面积就会清除全部蒙层]</p>
+    <canvas width="400" height="400" id="myCanvas"></canvas>
+</body>
+<script>
+    var myCanvas = document.getElementById('myCanvas');
+    var ctx = myCanvas.getContext('2d');
+    var w = myCanvas.width;
+    var h = myCanvas.height;
+    // 定义一个上一个点的对象lastPos
+    var lastPos = {};
+
+    // 入口函数
+    function init() {
+        // 设置背景图片--》随机数产生
+        var img = new Image();
+        var random = Math.random();
+        if (random < 0.1) {
+            img.src = './img/中奖.png';
+            // myCanvas.style.backgroundImage = 'url(./img/中奖.png)';
+        } else if (random >= 0.1 && random <= 0.3) {
+            img.src = './img/没中奖1.png';
+            // myCanvas.style.backgroundImage = 'url(./img/没中奖1.png)';
+        } else if (random > 0.3 && random <= 0.6) {
+            img.src = './img/没中奖2.png';
+            // myCanvas.style.backgroundImage = 'url(./img/没中奖2.png)';
+        } else if (random > 0.6 && random <= 1) {
+            img.src = './img/未中奖3.png';
+            // myCanvas.style.backgroundImage = 'url(./img/未中奖3.png)';
+        }
+        // 图片加载后再执行鼠标操作
+        img.onload = function () {
+            myCanvas.style.backgroundImage = 'url(' + img.src + ')';
+            // 鼠标按下移动时刮刮卡
+            myCanvas.addEventListener('mousedown', downFun);
+        }
+        // 在图片上覆盖蒙层
+        ctx.beginPath();
+        ctx.fillStyle = "#aaa";
+        ctx.fillRect(0, 0, w, h);
+        // 新旧像素的合并方式
+        ctx.globalCompositeOperation = "destination-out";
+    }
+    init();
+
+
+    // 设置鼠标按下的函数
+    function downFun(e) {
+        // 第一个点
+        lastPos.x = e.clientX - myCanvas.offsetLeft;
+        lastPos.y = e.clientY - myCanvas.offsetTop;
+        // 初始时画上小圆点
+        ctx.beginPath();
+        ctx.arc(lastPos.x, lastPos.y, 20, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.fill();
+
+        myCanvas.addEventListener('mousemove', moveFun);
+        // 在鼠标按下后才设置鼠标抬起的事件
+        document.body.addEventListener('mouseup', upFun);
+    }
+    // 设置鼠标当前移动的函数
+    function moveFun(e) {
+        // 第二个点
+        var x = e.clientX - myCanvas.offsetLeft;
+        var y = e.clientY - myCanvas.offsetTop;
+        // 将上一个点和下一个点进行连线
+        ctx.beginPath();
+        ctx.moveTo(lastPos.x, lastPos.y);
+        ctx.lineTo(x, y);
+        ctx.lineWidth = 40;
+        ctx.lineCap = 'round';
+        ctx.stroke();
+
+
+        // ctx.beginPath();
+        // // 画圆
+        // ctx.arc(x, y, 20, 0, Math.PI * 2);
+        // // 闭合路径
+        // ctx.closePath();
+        // // 填充
+        // ctx.fill();
+        // 存一下每次最后移动的点的值
+        lastPos.x = x;
+        lastPos.y = y;
+    }
+    // 鼠标抬起时，取消move事件
+    function upFun() {
+        myCanvas.removeEventListener('mousemove', moveFun);
+        document.body.removeEventListener('mouseup', upFun);
+        clearCover();
+    }
+    // 计算清除的区域
+    function clearCover() {
+        var imageData = ctx.getImageData(0, 0, w, h);
+        // 声明累加的值
+        var sum = 0;
+        // 这里只遍历a的透明度值，所以i += 4 没隔4个判断一次
+        for (var i = 0; i < imageData.data.length; i += 4) {
+            // 是0就被刮开了，累加被刮开的像素值
+            if (imageData.data[i] == 0) {
+                sum++;
+            }
+        }
+        // 判断拿到的rgba中的a值 透明度
+        if (sum > w * h * 0.7) {
+            ctx.clearRect(0, 0, w, h);
+        }
+    }
+
+
+    // 绘制刮卡画笔
+    ctx.globalCompositeOperation = "destination-out";
+    ctx.beginPath();
+    ctx.arc(100, 100, 0, 0, Math.PI * 2);
+    ctx.fill();
+
+    // var img = new Image();
+    // img.src = './img/中奖.png';
+    // img.onload = function () {
+    //     在画布上插入图片
+    //     var bg = ctx.createPattern(img, 'no-repeat');
+    //     ctx.fillStyle = bg;
+    //     ctx.fillRect(0, 0, w, h);  
+    // }
+
+
+</script>
+
+</html>

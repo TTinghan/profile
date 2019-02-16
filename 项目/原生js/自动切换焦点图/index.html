@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>焦点图</title>
+    <style>
+        .clearfix::after{
+            content: " ";
+            display: table;
+            clear: both;
+        }
+        .container {
+            margin-left: 30%;
+            padding-top: 10%;
+        }
+        /* 左边小图布局 */
+        #left {
+            width: 140px;
+            float: left;
+        }
+        #left img {
+            width: 140px;
+        }
+        /* 右边大图布局 */
+        #right{
+            margin-left: 10px;
+            float: left;
+            width: 435px;
+        }
+        #right img {
+            display: none;/* 开始时大图隐藏 */
+            width: 435px;
+        }
+        #right .show {/* 权重一样时，优先生效 */
+            display: inline-block;/* 显示大图 */
+        }
+        #pointer {
+            margin-top: 4px;/* 让选框居中 */
+            position: absolute;/* 绝对定位 */
+            top: 0;
+            left: 0;
+        }
+        .box {
+            position: relative;
+        }
+    </style>
+</head>
+<body class="container">
+    <div class="box clearfix">
+        <!-- 左边的小图 -->
+        <div id="left">
+            <img src="img/1.jpg" alt="">
+            <img src="img/2.jpg" alt="">
+            <img src="img/3.jpg" alt="">
+        </div>
+        <!-- 中间的选框图 -->
+        <img src="img/pointer.png" alt="" id="pointer">
+        <!-- 右边显示的大图 -->
+        <div id="right">
+            <img src="img/1.jpg" alt="" class="show">
+            <img src="img/2.jpg" alt="">
+            <img src="img/3.jpg" alt="">
+        </div>
+    </div>
+
+    <script>
+        var leftImgAry = document.getElementById("left").getElementsByTagName("img");
+        var rightImgAry = document.getElementById("right").getElementsByTagName("img");
+        var pointer = document.getElementById("pointer");
+        var TopAry = [0,84,164];//设置目标值数组
+        //需要监听鼠标移上小图的事件
+        for(var i = 0;i<leftImgAry.length;i++){
+            leftImgAry[i].onmouseover = mouseOver;//左边小图加上鼠标的监听
+            leftImgAry[i].index = i;//储存当前图片的编号 用于确认显示图片对应
+        }
+        function mouseOver(){
+            console.log(this.index);
+            for(var i = 0;i<rightImgAry.length;i++){
+                if(i == this.index){
+                    rightImgAry[i].className = "show";//如果i对应小图index 对应大图就show
+             //--设置pointer的移动--//                   
+                    Top = TopAry[i];//移动到最上面的目标值
+                    nowTop = pointer.offsetTop;//选框图相对于父级元素的top值，当前的top值 
+                    if(moveLoop == null){//当moveLoop为空才启动新线程
+                        moveLoop = setInterval(moveTo,100);//计时器每次100ms调用一次
+                    }
+                }else{
+                    rightImgAry[i].className = " ";//否则就不显示 为空
+                }
+            }
+        }
+        var moveLoop = null;//setInterval(moveTo,100);//计时器每次100ms调用一次
+        var Top = 164;//移动的最下面目标值
+        var nowTop = 0;//选框图当前的top值
+        // var Top = 0;//移动到最上面的目标值
+        // var nowTop = 164;//选框图当前的top值        
+        var speed = 9;//移动的速度
+
+         //-- 鼠标上-->下移动选框--//
+        function  moveTo(){
+            if(nowTop < Top){
+                nowTop += speed;
+                if(nowTop>=top){
+                    nowTop = Top;//结束移动
+                    clearInterval(moveLoop);//清除计时器
+                    moveLoop = null;
+                }
+                console.log(nowTop + "px");
+            }    
+             //-- 鼠标下-->上移动选框--//
+             if(nowTop > Top){
+                nowTop -= speed;
+                if(nowTop <= top){
+                    nowTop = Top;//结束移动
+                    clearInterval(moveLoop);//清除计时器
+                    moveLoop = null;
+                 }
+                 console.log(nowTop + "px");
+             }
+              //-- 当前值等于最终值时，不动--//
+            if(nowTop == Top ){
+                clearInterval(moveLoop);      
+                moveLoop = null;//释放计时器时也清空线程         
+            }    
+            pointer.style.top = nowTop + "px"; //修改的内容 
+        }
+
+    </script>
+</body>
+</html>

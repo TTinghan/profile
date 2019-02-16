@@ -1,0 +1,196 @@
+.big{
+    width: 100%;
+    height: 600px;
+    background: linear-gradient(45deg,#000 0%, #0094d9 35%, #5a3694 55%, #ee4d74 75%, rgb(19, 91, 245) 100%);/* 设置线性渐变(角度，颜色值) */
+    background-size: 400%;
+    background-position: 0% 100%;/* 背景颜色的帧数 */
+    animation:gradient 7.5s ease-in-out infinite;
+
+    /* background: url(../img/33.jpg) no-repeat; */
+    /* background-size: cover; */
+    /* background-position: center; */
+    text-align: center;
+    color: white;
+}
+@keyframes gradient{
+    0% {
+        background-position: 0% 100%;
+    }
+    50% {
+        background-position: 100% 0%;
+    }
+    100% {
+        background-position: 0% 100%;        
+    }
+}
+.big h1{
+    font-size: 120px;
+    margin-top: 100px;
+}
+.big h1+p{
+    font-size: 40px;
+}
+.big p:last-child{
+    margin-top: 80px;
+}
+
+.header-projects{
+    margin: 0 auto;
+    margin-top: 60px;
+    text-align: center;
+    margin-bottom: 40px;
+    width: 70%;
+    background-color: rgb(23, 201, 186);
+    border-radius: 50px;
+    padding: 15px 0 15px;
+    box-shadow:16px 15px 16px 1px #000;
+}
+.header-projects h1{
+    font-weight: 500;
+    line-height: 1.1;
+    font-size: 42px;
+}
+.header-projects p{
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    margin: 0 0 10px;
+}
+.thumbnail{
+    text-align: center;
+    min-width: 270px;
+}
+.row .thumbnail>img{
+    display: inline-block;
+    max-width: 260px;
+    max-height: 131px;
+    /* width: 256px;
+    height: 150px; */
+} 
+.addpa{
+    max-width: 270px;
+    margin: 10px auto;
+    /* padding: 0 15px; */
+}
+.addpa p{
+    height: 40px;
+}
+.addpa img{
+    width: 300px;
+    height: 150px !important;
+}
+.addcenter{
+    text-align: center;
+}
+.addcenter h3{
+    color: blue;
+}
+/* .vector {
+    width: 266px;
+    height: 262px;
+    margin: 20px 0;
+}
+.aaa {
+    transform-style: preserve-3d;
+    transform: rotateY(0);
+    animation: rota1 1s ease;
+}
+
+.bbb {
+    transform-style: preserve-3d;
+    transform: rotateY(0);
+    animation: rota2 1s ease;
+}
+
+.ccc {
+    transform-style: preserve-3d;
+    transform: rotateX(0);
+    animation: rota3 1s ease;
+}
+
+.ddd {
+    transform-style: preserve-3d;
+    transform: rotateX(0);
+    animation: rota4 1s ease;
+}
+
+@keyframes rota1 {
+    to {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes rota2 {
+    to {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        transform: rotateY(-360deg);
+    }
+}
+
+@keyframes rota3 {
+    to {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        transform: rotateX(360deg);
+    }
+}
+
+@keyframes rota4 {
+    to {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        transform: rotateX(-360deg);
+    }
+} */
+.weixin-pic{
+    /* width: 227px; */
+    height: 226px;
+}
+.footer{
+    color: #777;
+    padding: 30px 0;
+    border-top: 1px solid #e5e5e5;
+    margin-top: 70px;
+}
+/* .about{
+     margin-left: -15px; 
+} */
+.about ul,.about li{
+    list-style: none;
+}
+
+.about>div{
+    height: 110px;
+    margin-bottom: 10px;
+}
+.about ul li a{
+    color: #777;
+}
+.about h4{
+    color: #563d7c;
+    font-size: 16px;
+}
+.footer-bottom a{
+    color: #777;
+}
+
+.footer-bottom ul li:first-child::after{
+    content: "|";
+    padding: 0 0 0 15px;
+}
+/* 间隔的背景色 */
+.bgg{
+    width: 100%;
+    background-color: rgb(190, 226, 215);
+}
+@media all and (min-width:768px){
+    .masthead{
+        padding: 90px 0 110px;
+    }
+    .masthead h1{
+        font-size: 90px;
+    }
+}

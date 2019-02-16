@@ -1,92 +1,480 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="author" content="晴晴">
-    <title>晴儿的主页</title>
-    <link rel="shortcut icon" href="main-img/heart.icon"> 
-    <embed src="main-music/foxigirl.mp3" hidden="true" autostart="true" loop="true"/> 
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        html,body{
-            width: 100%;
-            height:100%;
-        }
-        body {
-            /* background-image: url("main-img/bc.png"); */
-            /* background-color: palevioletred; */
-            width: 100%;
-            /* height:100%; */
-            background: linear-gradient(45deg,#6fc7b5 0%,#13bdce 20%,#0094d9 40%, #5a3694 60%, #ee4d74 80%, #f58c58 100%);/* 设置线性渐变(角度，颜色值) */
-            background-size: 400%;
-            background-position: 0% 100%;/* 背景颜色的帧数 */
-            animation:gradient 7.5s ease-in-out infinite;
-        }
-        @keyframes gradient{
-        0% {
-            background-position: 0% 100%;
-        }
-        50% {
-            background-position: 100% 0%;
-        }
-        100% {
-            background-position: 0% 100%;        
-        }
-    }
-        img {
-            position: absolute;
-            padding-top: 150px;
-            left: 50%;
-            margin-left: -181px;
-        }
-        div {
-            padding-top: 450px;
-            margin-left: 320px;
-        }
-        h1 {
-            padding-top: 0;
-            margin-left: 30px;
-            color: white;
-        }
-        a {
-            text-decoration: none;
-            /* 去掉超链接的下划线 */
-        }
-        .work a {
-            display: inline-block;
-            margin: 10px;
-            color: #f2f2f2;
-            padding: 10px;
-            margin: 0px 20px 0px 20px;
-            transition: 0.5s;
-        }
-        .work a:hover {
-            transform: scale(2);
-        }
-    </style>
-    <style media="screen and (min-width:512px) and (max-width:1024px)">
-        body {
-            /* background-image: url("main-img/bc.png"); */
-            background-color: palevioletred;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>晴晴-个人主页</title>
+    <!-- <embed src="./Anthony Keyrouz Romy Wave - Something Just Like This.mp3" hidden="true" autostart="true" loop="true" /> -->
+    <link rel="shortcut icon" href="./image/heart.icon" type="image/x-icon">
+    <link rel="stylesheet" href="./bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 
 <body>
-    <img src="main-img/pig.png">
-    <h1>Welcome to QingQing's world!</h1>
-    <div class="work">
-        <a href="xiaomi/xiaomi.html"> 小米闪购</a>
-        <a href="drop-down menu/index.html"> 二级下拉菜单</a>
-        <a href="Popup/index.html">弹窗</a>
-        <a href="Turnaround draw/index.html">转盘抽奖</a>
-        <a href="city/index.html">三级联动</a>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">首页</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown active hidden-sm hidden-md">
+                        <a href="#1" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">Html5项目实例 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#1">loading小图标</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#1">小米闪购首页</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#1">css文件压缩工具</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#1">刮刮乐效果</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#1">个性化音乐播放器</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#1">文件的拖拽上传</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown  hidden-sm">
+                        <a href="#2" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">Css3项目实例 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#2">响应式动画</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#2">Bootstrap首页</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#2">3D动画</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#2">瀑布流</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#2">3D拖拽相册</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#3" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">JavaScript项目实例 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#3">纯JS冒泡算法</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#3">转盘抽奖</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#3">焦点图切换</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#3">弹窗效果</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#3">三级联动查询</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#3">JS轮播图</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#4" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">游戏项目实例 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#4">FlappBird</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#4">打地鼠</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#4">别踩白块</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#4" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">JQuery项目实例 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#6">JQuery卷轴动画</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#6">JQuery人物淡入淡出</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#6">JQuery手风琴菜单</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden-sm"><a href="#5" aria-expanded="false">关于本人<span class="caret"></span></a></li>
+                    <li class="dropdown">
+                        <a href="#5" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">联系方式<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#5">Phone：18800420363</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#5">Email：286681763@qq.com</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#5">地址：黑龙江科技大学</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="jumbotron big">
+        <h1><b>坚持!</b></h1>
+        <p>只要还在前进，就是一种进步</p>
+        <p><a class="btn btn-primary btn-lg" href="#1" role="button">查看更多项目实例</a></p>
     </div>
 
+    <div id="1" class="container projects">
+        <div class="page-header header-projects">
+            <h1>Html5项目实例</h1>
+            <p>这些项目是对Html、css布局进行熟练，优化而制作的</p>
+        </div>
+
+        <div class="row">
+            <div id='1-1' class="col-sm-6 col-md-4 col-lg-3 add">
+                <div class="vector">
+                    <div class="thumbnail addpa">
+                        <a href="./项目/Html5/loading小图标/loading.html" target="blank"><img src="./image/loading小图标.png"
+                                alt=""></a>
+                        <div class="caption addcenter">
+                            <h3><a href="./项目/Html5/loading小图标/loading.html" target="blank">loading小图标<br><small>PDF
+                                        小Demo练习</small></a></h3>
+                            <p>使用svg绘制loading常见小图标</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 add">
+                <div class="vector">
+                    <div class="thumbnail addpa">
+                        <a href="./项目/Html5/小米闪购/xiaomi.html" target="blank"> <img src="./image/小米闪购.jpg" alt=""></a>
+                        <div class="caption addcenter">
+                            <h3><a href="./项目/Html5/小米闪购/xiaomi.html" target="blank">小米闪购首页<br><small>PDF 网站实例</small></a></h3>
+                            <p>仿写小米闪购首页html与css样式</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 add">
+                <div class="vector">
+                    <div class="thumbnail addpa">
+                        <a href="./项目/Html5/css文件压缩工具/index.html" target="blank"> <img src="./image/css文件压缩工具.png" alt=""></a>
+                        <div class="caption addcenter">
+                            <h3><a href="./项目/Html5/css文件压缩工具/index.html" target="blank">css文件压缩工具<br><small>PDF 网站实例</small></a></h3>
+                            <p>练习readerFrame drag文件上传</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 add">
+                <div class="vector">
+                    <div class="thumbnail addpa">
+                        <a href="./项目/Html5/Canvas刮刮乐/index.html" target="blank"> <img src="./image/刮刮乐.png" alt=""></a>
+                        <div class="caption addcenter">
+                            <h3><a href="./项目/Html5/Canvas刮刮乐/index.html" target="blank">刮刮乐<br><small>PDF 网站实例</small></a></h3>
+                            <p>通过Canvas实现刮刮乐抽奖效果</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 add">
+                <div class="vector">
+                    <div class="thumbnail addpa">
+                        <a href="./项目/Html5/个性音乐播放器/index.html" target="blank"> <img src="./image/个性音乐播放器.png" alt=""></a>
+                        <div class="caption addcenter">
+                            <h3><a href="./项目/Html5/个性音乐播放器/index.html" target="blank">个性音乐播放器<br><small>PDF 网站实例</small></a></h3>
+                            <p>通过Audio创建个性化音乐播放器，应用原生js进行音乐播放等操作</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 add">
+                <div class="vector">
+                    <div class="thumbnail addpa">
+                        <a href="./项目/Html5/文件拖拽上传/index.html" target="blank"> <img src="./image/文件的拖拽上传.png" alt=""></a>
+                        <div class="caption addcenter">
+                            <h3><a href="./项目/Html5/文件拖拽上传/index.html" target="blank">文件的拖拽上传<br><small>PDF 网站实例</small></a></h3>
+                            <p>练习readerFrame drag文件上传</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bgg">
+        <div id="2" class="container projects">
+            <div class="page-header header-projects">
+                <h1>Css3项目实例</h1>
+                <p>这些项目是对Html、css布局进行熟练，优化而制作的</p>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 col-md-4 col-lg-3 add">
+                    <div class="thumbnail addpa">
+                        <a href="./项目/css3/仿百度图片标语动画/index.html" target="blank"><img src="./image/仿百度图片标题动画.png" alt=""></a>
+                        <div class="caption addcenter">
+                            <h3><a href="./项目/css3/仿百度图片标语动画/index.html" target="blank">响应式动画<br><small>PDF 网站实例</small></a></h3>
+                            <p>通过animate与transition结合原生js进行响应式动画操作</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 add">
+                    <div class="thumbnail addpa">
+                        <a href="./项目/css3/Bootstrap首页/index.html" target="blank"> <img src="./image/Bootstropt首页.png"
+                                alt=""></a>
+                        <div class="caption addcenter">
+                            <h3><a href="./项目/css3/Bootstrap首页/index.html" target="blank">bootstrap首页<br><small>PDF
+                                        网站实例</small></a></h3>
+                            <p>仿写Bootstrap官网首页，熟悉bootstrap3的实际应用</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 add">
+                    <div class="thumbnail addpa">
+                        <a href="./项目/css3/3D图书可翻页/自动旋转.html" target="blank"> <img src="./image/3D图书可翻页.png" alt=""></a>
+                        <div class="caption addcenter">
+                            <h3><a href="./项目/css3/3D图书可翻页/自动旋转.html" target="blank">3D动画<br><small>PDF 网站实例</small></a></h3>
+                            <p>通过transform属性，进行rotate3D操作，实现3D动画,通过原生js实现翻页</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 add">
+                    <div class="thumbnail addpa">
+                        <a href="./项目/css3/瀑布流/index.html" target="blank"> <img src="./image/瀑布流.png" alt=""></a>
+                        <div class="caption addcenter">
+                            <h3><a href="./项目/css3/瀑布流/index.html" target="blank">瀑布流<br><small>PDF 网站实例</small></a></h3>
+                            <p>通过column属性，对图片的排列进行操作，用ie6盒模型</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 add">
+                    <div class="thumbnail addpa">
+                        <a href="./项目/css3/3D拖拽相册/demo.html" target="blank"> <img src="./image/3D拖拽相册.png" alt=""></a>
+                        <div class="caption addcenter">
+                            <h3><a href="./项目/css3/3D拖拽相册/demo.html" target="blank">3D拖拽相册<br><small>PDF 网站实例</small></a></h3>
+                            <p>通过transform属性，进行rotate3D操作，实现3D动画,通过原生js操作实现拖拽</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="3" class="container projects">
+        <div class="page-header header-projects">
+            <h1>JavaScript项目</h1>
+            <p>这些项目是熟悉原生JS进行dom操作，实现人机交互操而制作的。</p>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-lg-3 add">
+                <div class="thumbnail addpa">
+                    <a href="./项目/原生js/冒泡排序动画/冒泡排序.html" target="blank"><img src="./image/纯js冒泡算法.jpg" alt=""></a>
+                    <div class="caption addcenter">
+                        <h3><a href="./项目/原生js/冒泡排序动画/冒泡排序.html">纯js冒泡算法<br><small>PDF 网站实例</small></a></h3>
+                        <p>通过原生JS实现冒泡算法的动画演示，动态清晰的表现出冒泡排序的方式。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 add">
+                <div class="thumbnail addpa">
+                    <a href="./项目/原生js/转盘抽奖/index.html" target="blank"><img src="./image/转盘抽奖.png" alt=""></a>
+                    <div class="caption addcenter">
+                        <h3><a href="./项目/原生js/转盘抽奖/index.html">抽奖<br><small>PDF 网站实例</small></a></h3>
+                        <p>通过原生JS结合定时器实现随机抽奖动画制作。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 add">
+                <div class="thumbnail addpa">
+                    <a href="./项目/原生js/自动切换焦点图/index.html" target="blank"> <img src="./image/切换焦点图.png" alt=""></a>
+                    <div class="caption addcenter">
+                        <h3><a href="./项目/原生js/自动切换焦点图/index.html">焦点图切换<br><small>PDF 网站实例</small></a></h3>
+                        <p>通过原生js操作动画，实现焦点图的动态切换。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 add">
+                <div class="thumbnail addpa">
+                    <a href="./项目/原生js/弹窗/index.html" target="blank"> <img src="./image/弹窗.png" alt=""></a>
+                    <div class="caption addcenter">
+                        <h3><a href="./项目/原生js/弹窗/index.html">QQ弹窗<br><small>PDF 网站实例</small></a></h3>
+                        <p>通过原生js结合css的position定位操作弹窗动画的显示。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 add">
+                <div class="thumbnail addpa">
+                    <a href="./项目/原生js/原生js实现三级联动/index.html" target="blank"> <img src="./image/三级联动.png" alt=""></a>
+                    <div class="caption addcenter">
+                        <h3><a href="./项目/原生js/原生js实现三级联动/index.html">三级联动查询<br><small>PDF 网站实例</small></a></h3>
+                        <p>通过原生js进行三级的联动查询</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 add">
+                <div class="thumbnail addpa">
+                    <a href="./项目/原生js/原生js实现三级联动/index.html" target="blank"> <img src="./image/三级联动.png" alt=""></a>
+                    <div class="caption addcenter">
+                        <h3><a href="./项目/原生js/原生js实现三级联动/index.html">三级联动查询<br><small>PDF 网站实例</small></a></h3>
+                        <p>通过原生js进行三级的联动查询</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 add">
+                <div class="thumbnail addpa">
+                    <a href="项目/week1/轮播/ziji.html" target="blank"> <img src="./image/三级联动.png" alt=""></a>
+                    <div class="caption addcenter">
+                        <h3><a href="项目/week1/轮播/ziji.html">轮播图实现<br><small>PDF 网站实例</small></a></h3>
+                        <p>通过原生js操作dom实现轮播图动画效果</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="bgg">
+        <div id="4" class="container projects">
+            <div class="page-header header-projects">
+                <h1>游戏项目</h1>
+                <p>这些项目是基于兴趣，并且使用原生JS进行游戏项目操作，有借鉴的js思想开发</p>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 col-md-4 col-lg-3 add">
+                    <div class="thumbnail addpa">
+                        <a href="./项目/小游戏/小鸟飞飞/index.html" target="blank"><img src="./image/FlappBird.jpg" alt=""></a>
+                        <div class="caption addcenter">
+                            <h3><a href="./项目/小游戏/小鸟飞飞/index.html" target="blank">FlappBird<br><small>PDF 网站实例</small></a></h3>
+                            <p>通过原生JS结合canvas实现以前较火的FlappBird游戏</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 add">
+                    <div class="thumbnail addpa">
+                        <a href="./项目/小游戏/打地鼠/index.html" target="blank"> <img src="./image/打地鼠游戏.png" alt=""></a>
+                        <div class="caption addcenter">
+                            <h3><a href="./项目/小游戏/打地鼠/index.html" target="blank">打地鼠<br><small>PDF 网站实例</small></a></h3>
+                            <p>通过原生js结合dom操作判断实现打地鼠小游戏的功能实现</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 add">
+                    <div class="thumbnail addpa">
+                        <a href="./项目/小游戏/别踩白块新/index.html" target="blank"> <img src="./image/别踩白块.png" alt=""></a>
+                        <div class="caption addcenter">
+                            <h3><a href="./项目/小游戏/别踩白块新/index.html" target="blank">别踩白块<br><small>PDF 网站实例</small></a></h3>
+                            <p>通过原生js和jQuery实现经典的别踩白块小游戏，有借鉴部分，基于兴趣进行开发</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="6" class="container projects">
+        <div class="page-header header-projects">
+            <h1>JQuery项目</h1>
+            <p>使用JQuery工具操作且实现经典项目</p>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-lg-3 add">
+                <div class="thumbnail addpa">
+                    <a href="./项目/jQuery/jquery实现卷轴效果/jQuery实现卷轴效果.html" target="blank"><img src="./image/卷轴.png" alt=""></a>
+                    <div class="caption addcenter">
+                        <h3><a href="./项目/jQuery/jquery实现卷轴效果/jQuery实现卷轴效果.html" target="blank">JQuery卷轴动画<br><small>PDF
+                                    网站实例</small></a></h3>
+                        <p>使用JQuery实现卷轴动画</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 add">
+                <div class="thumbnail addpa">
+                    <a href="./项目/jQuery/人物淡出淡入/index.html" target="blank"> <img src="./image/人物淡入淡出.png" alt=""></a>
+                    <div class="caption addcenter">
+                        <h3><a href="./项目/jQuery/人物淡出淡入/index.html" target="blank">JQuery人物淡入淡出<br><small>PDF 网站实例</small></a></h3>
+                        <p>使用JQuery工具实现JQuery人物淡入淡出效果</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 add">
+                <div class="thumbnail addpa">
+                    <a href="./项目/jQuery/手风琴菜单/index.html" target="blank"> <img src="./image/手风琴菜单.png" alt=""></a>
+                    <div class="caption addcenter">
+                        <h3><a href="./项目/jQuery/手风琴菜单/index.html" target="blank">JQuery手风琴菜单<br><small>PDF 网站实例</small></a></h3>
+                        <p>使用JQuery实现手风琴菜单效果</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer id="5" class="footer">
+        <div class="container">
+            <div class="row footer-top">
+                <div class="col-md-3 col-lg-3">
+                    <h4><img class="weixin-pic" src="./image/weixin.jpg" alt=""></h4>
+                    <p style="font-size:25px">【作者：晴晴 微信】</p>
+                </div>
+                <div class="col-md-6 col-lg-5 col-lg-offset-1">
+                    <div class="row about">
+                        <div class="col-sm-3">
+                            <h4>帮助</h4>
+                            <ul class="list-unstyled">
+                                <li><a href="">关于我</a></li>
+                                <li><a href="">账号管理</a></li>
+                                <li><a href="">操作指南</a></li>
+                                <li><a href="">招聘</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-3">
+                            <h4>关注</h4>
+                            <ul class="list-unstyled">
+                                <li><a href="">关于我</a></li>
+                                <li><a href="">广告合作</a></li>
+                                <li><a href="">友情链接</a></li>
+                                <li><a href="">招聘</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-3">
+                            <h4>关于</h4>
+                            <ul class="list-unstyled">
+                                <li><a href="">关于我</a></li>
+                                <li><a href="">广告合作</a></li>
+                                <li><a href="">友情链接</a></li>
+                                <li><a href="">招聘</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-3">
+                            <h4>联系方式</h4>
+                            <ul class="list-unstyled">
+                                <li><a href="">电话</a></li>
+                                <li><a href="">电子邮件</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row footer-bottom">
+                <ul class="list-inline text-center">
+                    <li><a href="">Good Good study</a></li>
+                    <li><a href="">Day Day up</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!-- <script src="./js/index.js"></script> -->
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>

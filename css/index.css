@@ -145,9 +145,18 @@
         transform: rotateX(-360deg);
     }
 } */
-.weixin-pic{
-    /* width: 227px; */
-    height: 226px;
+.wechat-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.wechat-pic{
+    height: 168px;
+    object-fit: contain;
+}
+.wechat-name {
+    font-size: 25px;
+    text-align: center;
 }
 .footer{
     color: #777;
